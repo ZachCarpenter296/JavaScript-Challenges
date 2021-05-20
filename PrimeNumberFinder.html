@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Prime Number Finder</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function FindAllPrimes() {
+            var pElement = document.getElementById("p");
+
+            var bool = true;
+            var limit = 100000;
+
+            for (var i = 2; i < limit; i++) {
+                for (var k = 2; k < limit; k++) {
+                    if (i != k && i % k == 0) {
+                        bool = false;
+                        break;
+                    }
+                }
+
+                if (bool) {
+                    pElement.textContent += (i + ', ');
+                }
+                bool = true;
+            }
+
+        }
+    </script>
+
+    <h1>
+        All Prime Numbers From 2 to 100000
+    </h1>
+
+    <button onclick="FindAllPrimes()">Calculate</button>
+
+    <p id="p"></p>
+</body>
+
+</html>
